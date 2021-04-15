@@ -17,25 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="105" translatesAutoresizingMaskIntoConstraints="NO" id="vNF-ok-Nor">
-                                <rect key="frame" x="45" y="424" width="338" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vNF-ok-Nor">
+                                <rect key="frame" x="10" y="424" width="394" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIS-06-u59">
-                                        <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="30"/>
                                         <state key="normal" title="進む"/>
                                         <connections>
                                             <action selector="nextstep:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9n6-9i-neW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFj-yG-UvT">
-                                        <rect key="frame" x="136" y="0.0" width="31" height="30"/>
+                                        <rect key="frame" x="131.5" y="0.0" width="131" height="30"/>
                                         <state key="normal" title="戻る"/>
                                         <connections>
                                             <action selector="goback:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VYD-eK-ss7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3S-AV-aPE">
-                                        <rect key="frame" x="272" y="0.0" width="66" height="30"/>
+                                        <rect key="frame" x="262.5" y="0.0" width="131.5" height="30"/>
                                         <state key="normal" title="再生/停止"/>
                                         <connections>
                                             <action selector="startend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AOA-xe-9bO"/>
@@ -47,6 +47,13 @@
                                 <rect key="frame" x="50" y="144" width="314" height="218"/>
                                 <gestureRecognizers/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90W-8E-EPY">
+                                <rect key="frame" x="50" y="144" width="314" height="218"/>
+                                <connections>
+                                    <action selector="tapview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rJo-Uq-nUJ"/>
+                                    <segue destination="Vdf-3K-Nyk" kind="show" id="Auz-ls-RQi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,28 +61,26 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="hFO-cN-r5h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="7iX-1J-XlX"/>
+                            <constraint firstItem="90W-8E-EPY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="9zk-nJ-cw1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vNF-ok-Nor" secondAttribute="trailing" constant="10" id="Hb0-AG-t2i"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hFO-cN-r5h" secondAttribute="bottom" constant="500" id="HfP-9h-wup"/>
                             <constraint firstItem="hFO-cN-r5h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Jr0-T8-Ygh"/>
-                            <constraint firstItem="vNF-ok-Nor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="QTO-yp-7MH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hFO-cN-r5h" secondAttribute="trailing" constant="50" id="Y4i-WI-4tG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vNF-ok-Nor" secondAttribute="bottom" constant="408" id="fpj-dG-ijX"/>
+                            <constraint firstItem="vNF-ok-Nor" firstAttribute="top" secondItem="90W-8E-EPY" secondAttribute="bottom" constant="62" id="sWH-FV-KdE"/>
+                            <constraint firstItem="vNF-ok-Nor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="vKX-93-qvf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="90W-8E-EPY" secondAttribute="trailing" constant="50" id="vck-o1-8Dg"/>
                             <constraint firstItem="vNF-ok-Nor" firstAttribute="top" secondItem="hFO-cN-r5h" secondAttribute="bottom" constant="62" id="xJF-C6-mGt"/>
+                            <constraint firstItem="90W-8E-EPY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="zIr-yl-S9p"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="sib-vC-tZw" appends="YES" id="OSv-0B-JY0"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="hFO-cN-r5h" id="9ZQ-9k-KsP"/>
+                        <outlet property="modoru" destination="KFj-yG-UvT" id="bC8-EF-KNn"/>
+                        <outlet property="susumu" destination="KIS-06-u59" id="A6j-x2-s83"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="sib-vC-tZw">
-                    <connections>
-                        <action selector="tapView:" destination="BYZ-38-t0r" id="MEw-qH-OeG"/>
-                        <segue destination="Vdf-3K-Nyk" kind="show" id="8Sc-Xv-Nzm"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
         </scene>
