@@ -80,7 +80,9 @@ class ViewController: UIViewController {
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         
         if timer != nil{
-        timer.invalidate()
+            timer.invalidate()
+            susumu.isEnabled = true
+            modoru.isEnabled = true
         }
         
         resultViewController.x = imageView.image!
