@@ -20,25 +20,20 @@ class ViewController: UIViewController {
     var timer : Timer!
     
     @IBAction func nextstep(_ sender: Any) {
-        if timer == nil{
         imageArror += 1
         display()
         imageView.image = UIImage(named: dispImageNo[imageArror])
-        }
-        
     }
     @IBAction func goback(_ sender: Any) {
-        if timer == nil{
         imageArror -= 1
         display()
         imageView.image = UIImage(named: dispImageNo[imageArror])
-        }
     }
     
     @objc func Ontimer(_ timer: Timer) {
-        imageView.image = UIImage(named: dispImageNo[imageArror])
         imageArror += 1
         display()
+        imageView.image = UIImage(named: dispImageNo[imageArror])
        }
     
     @IBAction func startend(_ sender: Any) {
@@ -49,9 +44,9 @@ class ViewController: UIViewController {
             modoru.isEnabled = false
         } else {
             timer.invalidate()
-            timer = nil
             susumu.isEnabled = true
             modoru.isEnabled = true
+            timer = nil
         }
     }
   
@@ -79,12 +74,10 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         
-        if timer != nil{
-            timer.invalidate()
-            susumu.isEnabled = true
-            modoru.isEnabled = true
-        }
-        
+        timer.invalidate()
+        susumu.isEnabled = true
+        modoru.isEnabled = true
+        timer = nil
         resultViewController.x = imageView.image!
     }
        
